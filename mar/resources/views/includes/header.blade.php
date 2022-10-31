@@ -1,0 +1,81 @@
+<header
+    class="site-header site-header--menu-center site-header--menu-center-adjustment site-header--logo-dark mobile-menu-trigger-dark site-header--absolute {{ $header_mode }}">
+    <div class="container">
+        <nav class="navbar site-navbar">
+            <!-- Brand Logo-->
+            <div class="site-header__brand">
+                <a href="{{ route('getIndex') }}">
+                    <!-- light version logo (logo must be black)-->
+                    <img src="/img/marketing/Marketingsolu-w-01.png" style="max-width: 160px" alt="" class="logo-white">
+                    <!-- Dark version logo (logo must be White)-->
+                    <img src="/img/marketing/Marketingsolu-b-01.png" style="max-width: 160px" alt="" class="logo-black">
+                </a>
+            </div>
+            <div class="menu-block-wrapper ">
+                <div class="menu-overlay"></div>
+                <nav class="menu-block menu-block-inner" id="append-menu-header">
+                    <div class="mobile-menu-head">
+                        <div class="go-back">
+                            <i class="fa fa-angle-left"></i>
+                        </div>
+                        <div class="current-menu-title"></div>
+                        <div class="mobile-menu-close">×</div>
+                    </div>
+                    <ul class="site-menu-main">
+                        {{-- <li class="nav-item nav-item-has-children">
+                            <a href="#" class="nav-link-item drop-trigger">Services <i
+                                    class="fas fa-angle-down"></i> </a>
+                            <ul class="sub-menu" id="submenu-9" style="min-width: max-content; max-width: max-content">
+                                <li class="sub-menu--item">
+                                    <a href="">
+                                        <div class="pe-1">
+                                            <img src="" />
+                                        </div>
+                                        <div
+                                            class="flex-1 border-end border-light ps-1 pe-2 d-flex flex-column justify-content-center">
+                                            <span>Proxies</span>
+                                            <span style="font-size: 12px;"></span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li> --}}
+                        <li class="nav-item nav-item-has-children">
+                            <a href="{{ route('getIndex') }}" class="nav-link-item drop-trigger">Home
+                            </a>
+                        </li>
+                        <li class="nav-item nav-item-has-children">
+                            <a href="{{ route('getPricing') }}" class="nav-link-item drop-trigger">Pricing</a>
+                        </li>
+                        <li class="nav-item nav-item-has-children">
+                            <a href="{{ route('getContact') }}" class="nav-link-item drop-trigger">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="header-button site-header__btns  site-header__btns--09 d-flex align-items-center">
+                    @if (auth()->check())
+                        <a href="{{ route('getProfile') }}" class="ms-2 text-{{ $header_mode }}">Hello,
+                            {{ auth()->user()->name }}</a>
+                        <div class="v-divider"></div>
+                        <a class="btn btn-transparent btn-1" href="{{ route('getLogout') }}">
+                            Logout
+                        </a>
+                    @else
+                        <a class="btn btn-transparent btn-1" href="{{ route('getSignin') }}">
+                            Login
+                        </a>
+                        <a class="btn btn-primary btn-primary-hvr btn-2 rounded" href="{{ route('getSignup') }}">
+                            Sign Up
+                        </a>
+                    @endif
+                </div>
+            </div>
+            <!-- mobile menu trigger -->
+            <div class="mobile-menu-trigger">
+                <span></span>
+            </div>
+            <!--/.Mobile Menu Hamburger Ends-->
+        </nav>
+    </div>
+</header>
